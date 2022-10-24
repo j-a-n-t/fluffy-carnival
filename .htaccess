@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^([a-z0-9-]+)/([a-zA-Z0-9/_=]+)$ index.php?url=$1&url2=$2
+RewriteRule ^([a-z0-9-]+)$ index.php?url=$1 [L]
+Options All -Indexes
