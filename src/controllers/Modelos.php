@@ -85,7 +85,7 @@ class Modelos extends connection
             $update->execute(array(":inicial" => $inicial, ":modelo" => $modelo, ":id" => $id));
             $update->fetchAll(\PDO::FETCH_ASSOC);
             header("Location: http://127.0.0.1/prueba/modelos");
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             return $th;
         }
     }
@@ -98,7 +98,7 @@ class Modelos extends connection
             $destroy->execute(array(":id" => $id));
             $destroy->fetchAll(\PDO::FETCH_ASSOC);
             header("Location: http://127.0.0.1/prueba/modelos");
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             return $th;
         }
     }
@@ -115,7 +115,7 @@ class Modelos extends connection
             $save->execute(array(":inicial" => $inicial, ":modelo" => $modelo));
             $data = $save->fetchAll(\PDO::FETCH_ASSOC);
             header("Location: http://127.0.0.1/prueba/modelos");
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             echo $th;
             return $th;
         }
