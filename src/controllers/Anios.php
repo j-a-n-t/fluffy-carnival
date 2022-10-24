@@ -25,7 +25,7 @@ class Anios extends connection
             $find->execute(array(":estatus" => $estatus));
             $data = $find->fetchAll(\PDO::FETCH_ASSOC);
             return $data;
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             return $th;
         }
 

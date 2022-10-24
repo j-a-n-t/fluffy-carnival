@@ -69,7 +69,7 @@ class Autos extends connection
             $find->execute(array(":estatus" => "activo"));
             $data = $find->fetchAll(\PDO::FETCH_ASSOC);
             return $data;
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             return $th;
         }
 
@@ -111,8 +111,8 @@ class Autos extends connection
                 ":email" => $correo,
             ));
             $save->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/autos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.io/prueba/autos");
+        } catch (\PDOException $th) {
             echo $th;
             return $th;
         }
@@ -141,8 +141,8 @@ class Autos extends connection
                 ":id" => $id));
             $data = $update->fetchAll(\PDO::FETCH_ASSOC);
 
-            header("Location: http://127.0.0.1/prueba/autos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.io/prueba/autos");
+        } catch (\PDOException $th) {
             echo $th;
             return $th;
         }
@@ -154,8 +154,8 @@ class Autos extends connection
             $destroy = $this->conn->prepare($this->query->delete());
             $destroy->execute(array(":id" => $id));
             $destroy->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/autos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.ioprueba/autos");
+        } catch (\PDOException $th) {
             return $th;
         }
     }

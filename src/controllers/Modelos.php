@@ -84,7 +84,7 @@ class Modelos extends connection
             $update = $this->conn->prepare($query);
             $update->execute(array(":inicial" => $inicial, ":modelo" => $modelo, ":id" => $id));
             $update->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/modelos");
+            header("Location: http://pruebaalexis.42web.io/prueba/modelos");
         } catch (\PDOException $th) {
             return $th;
         }
@@ -97,7 +97,7 @@ class Modelos extends connection
             $destroy = $this->conn->prepare($query);
             $destroy->execute(array(":id" => $id));
             $destroy->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/modelos");
+            header("Location: http://pruebaalexis.42web.io/prueba/modelos");
         } catch (\PDOException $th) {
             return $th;
         }
@@ -114,7 +114,7 @@ class Modelos extends connection
             $save = $this->conn->prepare($query);
             $save->execute(array(":inicial" => $inicial, ":modelo" => $modelo));
             $data = $save->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/modelos");
+            header("Location: http://pruebaalexis.42web.io/prueba/modelos");
         } catch (\PDOException $th) {
             echo $th;
             return $th;

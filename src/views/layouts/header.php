@@ -83,16 +83,6 @@
                         </a>
                     </button>
                     <button class="btn w-100 p-0">
-                        <a href="marcas"
-                           class="d-flex w-100 justify-content-between align-items-center p-2 text-black text-uppercase text-decoration-none">
-                        <span>
-                        <i class="fa-solid fa-table-cells"></i> |
-                        Marcas
-                        </span>
-                            <i class="fa-solid fa-arrow-right-to-bracket mx-2"></i>
-                        </a>
-                    </button>
-                    <button class="btn w-100 p-0">
                         <a href="submodelos"
                            class="d-flex w-100 justify-content-between align-items-center p-2 text-black text-uppercase text-decoration-none">
                         <span>

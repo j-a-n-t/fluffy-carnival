@@ -69,7 +69,7 @@ class SubModelos extends connection
             $find->execute(array(":estatus" => "activo"));
             $data = $find->fetchAll(\PDO::FETCH_ASSOC);
             return $data;
-        } catch (\Throwable $th) {
+        } catch (\PDOException $th) {
             return $th;
         }
 
@@ -102,8 +102,8 @@ class SubModelos extends connection
             $save = $this->conn->prepare($query);
             $save->execute(array(":inicial" => $inicial, ":vehiculo" => $vehiculo, ":marca" => $marca, ":modelo" => $modelo));
             $data = $save->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/submodelos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.io/prueba/submodelos");
+        } catch (\PDOException $th) {
             echo $th;
             return $th;
         }
@@ -130,8 +130,8 @@ class SubModelos extends connection
                 ":id" => $id));
             $data = $update->fetchAll(\PDO::FETCH_ASSOC);
 
-            header("Location: http://127.0.0.1/prueba/submodelos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.io/prueba/submodelos");
+        } catch (\PDOException $th) {
             echo $th;
             return $th;
         }
@@ -143,8 +143,8 @@ class SubModelos extends connection
             $destroy = $this->conn->prepare($this->query->delete());
             $destroy->execute(array(":id" => $id));
             $destroy->fetchAll(\PDO::FETCH_ASSOC);
-            header("Location: http://127.0.0.1/prueba/submodelos");
-        } catch (\Throwable $th) {
+            header("Location: http://pruebaalexis.42web.io/prueba/submodelos");
+        } catch (\PDOException $th) {
             return $th;
         }
     }
