@@ -31,7 +31,7 @@ class Routes
     {
 
         $route = trim($route);
-        $route = filter_var($route, FILTER_SANITIZE_STRING);
+        $route = filter_var($route, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $route = strtolower($route);
 
         switch ($route):
@@ -41,17 +41,17 @@ class Routes
                 include(VIEWS . "index.php");
                 break;
             case "modelos":
-                $URL = explode("/", $route2);
+                $URL = explode("/", $route2 ?? '');
                 $url = $URL[0];
                 $this->Modelos($url, $route2);
                 break;
             case "submodelos":
-                $URL = explode("/", $route2);
+                $URL = explode("/", $route2 ?? '');
                 $url = $URL[0];
                 $this->SubModelo($url, $route2);
                 break;
             case "autos":
-                $URL = explode("/", $route2);
+                $URL = explode("/", $route2 ?? '');
                 $url = $URL[0];
                 $this->Autos($url, $route2);
                 break;
@@ -92,7 +92,7 @@ class Routes
                 $request->update($id, $inicial, $modelo);
                 break;
             case "postDelete":
-                $val = explode("/", $values);
+                $val = explode("/", $values ?? '');
                 $id = $val[1];
                 $request->delete(base64_decode($id));
                 break;
@@ -121,7 +121,7 @@ class Routes
                 return;
                 break;
             case "postDelete":
-                $val = explode("/", $values);
+                $val = explode("/", $values ?? '');
                 $id = $val[1];
                 $req->delete(base64_decode($id));
                 break;
@@ -149,7 +149,7 @@ class Routes
                 return;
                 break;
             case "postDelete":
-                $val = explode("/", $values);
+                $val = explode("/", $values ?? '');
                 $id = $val[1];
                 $req->delete(base64_decode($id));
                 break;

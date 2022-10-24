@@ -7,7 +7,7 @@ class connection
 {
     private $host = "127.0.0.1";
     private $user = "root";
-    private $pass = "";
+    private $pass = "4l3r1k4s1312++-.";
     private $db = "db_autos";
     private $format = "utf8";
     protected $conn;
